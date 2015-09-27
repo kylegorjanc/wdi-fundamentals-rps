@@ -5,7 +5,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors'.");
     return prompt();
 }
 function randomPlay() {
@@ -25,14 +25,14 @@ function randomPlay() {
 function getPlayerMove(move) {
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return move = move || getInput();
+    return (move = move || getInput());
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return move = move || getInput();
+    return (move = randomPlay());
 }
 
 function getWinner(playerMove,computerMove) {
@@ -42,10 +42,10 @@ function getWinner(playerMove,computerMove) {
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
     if ((playerMove = 'rock') && (computerMove = 'rock')) {
         winner = 'tie';
-    } else if ((playerMove = 'rock') && (computerMove = paper)){
+    } else if ((playerMove = 'rock') && (computerMove = "paper")){
         winner = 'computer';
     } else if ((playerMove = 'rock') && (computerMove = 'scissors')) {
-        winner = 'player'
+        winner = 'player';
     }
     return winner;
 }
@@ -54,8 +54,18 @@ function playToFive() {
     console.log("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
-    // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
-    return [playerWins, computerWins];
+    getInput();
+    if (getWinner() === "player") {
+    for (playerWins; playerWins <= 5; playerWins +=1) {
+            console.log("You won against your opponent's" + " " + computerWins + " " + "games! Way to go!");
+        }
+    } else if (getWinner === 'computer') {
+    for (computerWins; computerWins <= 5; computerWins += 1) {
+        console.log ("Sorry, you lost" + " " + computerWins + " " + "games.");
+   } else {
+    getInput();
+   }
 }
-
+}
+playToFive();
+    
